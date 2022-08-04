@@ -1,0 +1,259 @@
+.profile-img {
+  max-width: 35vw;
+  margin-top: 8vh;
+  max-height: 50vh;
+  margin-left: 30px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4vh;
+}
+
+.title1 {
+  font-family: "Sequel Sans";
+  font-style: normal;
+  font-weight: 355;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+  opacity: 0.7;
+  margin-top: 8vh;
+  font-family: "Bangers", cursive !important;
+  color: #f56fad !important;
+  font-size: 60px !important;
+}
+
+.title2 {
+  font-family: "Sequel Sans";
+  font-style: normal;
+  font-weight: 415;
+  font-size: 80px;
+  line-height: 88px;
+  color: #ffffff;
+  font-family: "Bangers", cursive !important;
+  color: #7a4495 !important;
+  font-size: 60px !important;
+}
+
+.title3 {
+  font-family: "Sequel Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 50px;
+  line-height: 60px;
+  color: #ffffff;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+}
+
+.icons-desc {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 20px;
+  gap: 4px;
+  margin-right: 10px;
+  height: 40px;
+
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.subtitle {
+  font-family: "Sequel Sans";
+  font-style: normal;
+  font-weight: 360;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  flex: none;
+  order: 1;
+  margin-top: 20px;
+  flex-grow: 0;
+  font-family: "Alata", sans-serif !important;
+  letter-spacing: 2.2px !important;
+}
+
+.icon2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 20px;
+  gap: 4px;
+
+  height: 40px;
+  margin-right: 10px;
+
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.icon3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 20px;
+  gap: 2px;
+
+  height: 40px;
+
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+.subtitle5 {
+  font-family: "Sequel Sans";
+  font-style: normal;
+  font-weight: 305;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-right: 20vw;
+  font-family: "Alata", sans-serif !important;
+  letter-spacing: 2.2px !important;
+}
+
+.sellbut {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px 10px;
+  gap: 10px;
+
+  max-width: 150px;
+
+  background: rgba(255, 255, 255, 0.2);
+  margin-right: 20px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  color: #fff;
+  font-family: "Alata", sans-serif !important;
+  letter-spacing: 2.2px !important;
+}
+
+.transaction {
+  font-family: "Sequel Sans";
+  font-style: normal;
+  font-weight: 415;
+  font-size: 31px;
+  line-height: 40px;
+  margin-top: 50px;
+  color: #ffffff;
+}
+
+.tablehead {
+  font-family: "Sequel Sans";
+  font-style: normal;
+  font-weight: 360;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  letter-spacing: -0.02em;
+  color: #ffffff;
+
+  opacity: 0.7;
+}
+
+.profile-info {
+  width: 40vw;
+  height: 80px;
+  margin-top: 10vh;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  display: flex;
+}
+
+.profile-info1 {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-info2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-family: "Sequel Sans";
+  font-style: normal;
+  font-weight: 315;
+  font-size: 20px;
+  margin-top: 15px;
+  color: #ffffff;
+}
+
+.address {
+  font-family: "Sequel Sans";
+  font-style: normal;
+  font-weight: 305;
+  font-size: 16px;
+  color: #ffffff;
+  transform: translateY(-15px);
+}
+
+div.input-block {
+  position: relative;
+}
+div.input-block input {
+  font-size: 1.6rem;
+  color: #495055;
+  width: 350px;
+  padding: 15px 15px;
+  border-radius: 1rem;
+  border: 2px solid #d9d9d9;
+  outline: none;
+}
+div.input-block span.placeholder {
+  position: absolute;
+  margin: 17px 0;
+  padding: 0 4px;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  top: 0;
+  left: 17px;
+  transition: all 0.2s;
+  transform-origin: 0% 0%;
+  background: none;
+  pointer-events: none;
+}
+div.input-block input:valid + span.placeholder,
+div.input-block input:focus + span.placeholder {
+  transform: scale(0.8) translateY(-30px);
+  background: #fff;
+}
+div.input-block input:focus {
+  color: #284b63;
+  border-color: #284b63;
+}
+div.input-block input:focus + span.placeholder {
+  color: #284b63;
+}

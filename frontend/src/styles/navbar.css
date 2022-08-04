@@ -1,0 +1,66 @@
+.margined{
+    margin-right: 30vw;;
+}
+
+.Nav{
+    background-image: linear-gradient(to left, #120f2c, black);
+    background-size: cover;
+    width: 98.92vw;
+    overflow-x: hidden;
+}
+
+.cl{
+    color: #fff !important;
+    background-color: rgba(32, 3, 31, 0.621) !important;
+    min-height: 10vh;
+    font-size: 18px;
+}
+
+#p1{
+    color: #fff !important;
+}
+
+#p2{
+    color: #fff !important;
+}
+
+#p3{
+    color: #fff !important;
+}
+
+#p4{
+    color: #fff !important;
+}
+
+#p5{
+    color: #fff !important;
+}
+
+.logo {
+    max-height: 10vh;
+  }
+
+  .wallet {
+    padding: 12px 24px;
+    gap: 10px;
+    height: 56px;
+    background: #ffffff;
+    order: 0;
+    flex-grow: 0;
+    color: #000;
+    margin-top: 30px;
+    margin-right: 5px;
+  }
+  
+  .learn-button {
+    padding: 12px 24px;
+    gap: 10px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    order: 0;
+    flex-grow: 0;
+    margin-left: 5vw;
+    margin-right: 10px;
+    margin-top: 30px;
+  }

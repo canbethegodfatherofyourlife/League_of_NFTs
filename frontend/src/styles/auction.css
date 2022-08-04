@@ -1,0 +1,156 @@
+.Details {
+  width: 70%;
+  margin: auto;
+  margin-top: 10vh;
+  margin-bottom: 5%;
+}
+
+.cardBox {
+  background-color: black;
+  height: 100px;
+  padding-top: 20px;
+}
+
+.cardInnerBox {
+  text-decoration: none !important;
+  background-image: linear-gradient(to left, #f7f5f2, #3ab4f2);
+  height: 60px;
+  color: black;
+  font-weight: bold;
+}
+
+.cardInnerBox:hover {
+  color: white !important;
+}
+
+.selectTeams {
+  width: 60%;
+  background-color: black;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.teamName {
+  margin: auto;
+  margin-bottom: 10px;
+  display: block;
+  width: 65%;
+  height: 50px;
+  border-radius: 5px;
+  color: #000;
+  font-size: 20px;
+  font-family: "Bangers", cursive !important;
+  color: #f56fad !important;
+  font-size: 30px !important;
+}
+
+.teamName:hover {
+  background-image: linear-gradient(to left, #f7f5f2, #3ab4f2);
+}
+
+.tradingButton {
+  width: 150px;
+  font-size: larger;
+  border-radius: 10px;
+  border-color: white;
+  border-width: 2px;
+  background-color: #fff;
+  color: #000;
+  margin: 0px 20px;
+  padding: 5px;
+}
+
+.Panel {
+  margin: auto;
+  width: 30vw;
+
+  background-image: linear-gradient(to left, #f7f5f2, #3ab4f2);
+  border-radius: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 15px;
+}
+
+.Bid {
+  border-radius: 10px;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+div.input-block {
+  position: relative;
+}
+div.input-block input {
+  font-size: 1.6rem;
+  color: #495055;
+  width: 350px;
+  padding: 15px 15px;
+  border-radius: 1rem;
+  border: 2px solid #d9d9d9;
+  outline: none;
+}
+div.input-block span.placeholder {
+  position: absolute;
+  margin: 17px 0;
+  padding: 0 4px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  top: 0;
+  left: 17px;
+  transition: all 0.2s;
+  transform-origin: 0% 0%;
+  background: none;
+  pointer-events: none;
+  border-radius: 15px;
+}
+div.input-block input:valid + span.placeholder,
+div.input-block input:focus + span.placeholder {
+  transform: scale(0.8) translateY(-30px);
+  background: #fff;
+}
+div.input-block input:focus {
+  color: #284b63;
+  border-color: #284b63;
+}
+div.input-block input:focus + span.placeholder {
+  color: #284b63;
+}
+
+.PlaceBid {
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 10px 35px;
+  background-image: linear-gradient(to bottom right, #fcd34d, #ef4444, #ec4899);
+  background-color: #cf245f;
+  border: 0;
+  border-radius: 5px;
+  border-radius: 0.25rem;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+  line-height: 1.75rem; /* 28px */
+  padding: 15px 25px;
+  text-align: center;
+}
+
+.PlaceBid:hover {
+  box-shadow: none;
+}
+
+.selectTeamDiv {
+  font-family: "Bangers", cursive !important;
+  color: #7a4495 !important;
+  font-size: 40px !important;
+}

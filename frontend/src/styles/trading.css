@@ -1,0 +1,143 @@
+.Details {
+  width: 70%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.cardBox {
+  background-color: black;
+  height: 100px;
+  padding-top: 20px;
+}
+
+.cardInnerBox {
+  text-decoration: none !important;
+  background-image: linear-gradient(to left, #f7f5f2, #3ab4f2);
+  height: 60px;
+  color: black;
+  font-weight: bold;
+}
+
+.cardInnerBox:hover {
+  color: white !important;
+}
+
+.selectTeams {
+  width: 60%;
+  background-color: black;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.teamName {
+  margin: auto;
+  margin-bottom: 10px;
+  display: block;
+  width: 65%;
+  height: 50px;
+  border-radius: 5px;
+  color: black;
+  font-size: 20px;
+}
+
+.teamName:hover {
+  background-image: linear-gradient(to left, #f7f5f2, #3ab4f2);
+}
+
+.NFTDetails {
+  width: 50%;
+  margin: auto;
+  height: 600px;
+  background-image: linear-gradient(to left, #000000, #3a3845);
+  margin-bottom: 80px;
+  border-radius: 20px;
+}
+
+.PlayerNFT {
+  display: inline-block;
+  height: 400px;
+  margin: 50px 30px;
+  position: relative;
+  bottom: 110px;
+}
+
+.Price {
+  display: inline-block;
+  width: 30%;
+  margin-top: 100px;
+  margin-left: 22px;
+}
+
+.priceButton {
+  display: block;
+  margin: auto;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 50px;
+  background-image: linear-gradient(to left, #f7f5f2, #3ab4f2);
+}
+
+.button-75 {
+  align-items: center;
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+  border: 0;
+  position: relative;
+  bottom: 200px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: auto;
+  left: 30%;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: "Codec cold", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  height: 54px;
+  justify-content: center;
+  letter-spacing: 0.4px;
+  line-height: 1;
+  max-width: 100%;
+  padding: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-75:active {
+  outline: 0;
+}
+
+.button-75:hover {
+  outline: 0;
+}
+
+.button-75 span {
+  transition: all 200ms;
+}
+
+.button-75:hover span {
+  transform: scale(0.9);
+  opacity: 0.75;
+}
+
+@media screen and (max-width: 991px) {
+  .button-75 {
+    font-size: 15px;
+    height: 50px;
+  }
+
+  .button-75 span {
+    line-height: 50px;
+  }
+}
+
+.selectTeamDiv {
+  font-family: "Bangers", cursive !important;
+  color: #7a4495 !important;
+  font-size: 40px !important;
+}
