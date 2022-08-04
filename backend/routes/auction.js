@@ -74,7 +74,7 @@ router.patch("/:id/:id1", async function (req, res) {
 router.get("/:id/", async function (req, res) {
     try {
       const address = req.params.id;
-      const bidData = await Auction.find({ address: address});
+      const bidData = await Auction.find({ address: address})
       let bidPlaced = true;
       let bidAmt = 0;
       let playerid=null;
@@ -94,7 +94,7 @@ router.get("/:id/", async function (req, res) {
 
 
 // Get top 20% bids of each player
-router.post( '/', async function ( req, res ) {
+router.get( '/', async function ( req, res ) {
     try {
 
         Auction.find().distinct( 'playerId', async function ( error, ids ) {

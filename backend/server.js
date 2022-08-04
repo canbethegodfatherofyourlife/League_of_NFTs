@@ -25,9 +25,7 @@ app.use(bodyParser.json())
 
 // Available routes 
 app.use('/auction',require('./routes/auction'))
-app.use('/leaderboard',require('./routes/leaderboard'))
-app.use('/profile',require('./routes/profile'))
-app.use('/trading',require('./routes/trading'))
+
 
 const PORT = process.env.PORT || 3008
 app.listen(PORT,console.log(`Server Started on PORT ${PORT}`))

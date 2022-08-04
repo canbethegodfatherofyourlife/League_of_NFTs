@@ -2,22 +2,107 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/profile.css";
-import { ethers } from "ethers";
 import { CategoryData } from "../data";
 import { MetaData } from "../metadata";
-
+import GetAccount from "../hooks/GetAccount"
+import abi from '../artifacts/auction.json'
+import GetContract from '../hooks/GetContract';
+import GetAuction from '../hooks/GetAuction';
+import {ethers} from 'ethers'
 
 const Profile = () => {
-  
+  const [ playerid, setplayerid ] = useState( 0 );
+  const contract = GetContract();
+  const auction = GetAuction();
+  const addr = GetAccount()
+  let sendnftbut = useState(
+    localStorage.getItem("getnft") ? localStorage.getItem("getnft") : false
+  );
+  const [editname, setname] = useState("");
+  const [sellVal, setsellVal] = useState(0);
+  const {ethereum}=window;
+  let name = localStorage.getItem("name")
+    ? localStorage.getItem("name")
+    : "silver_blue";
 
+    let showbutton = useState(
+      localStorage.getItem("withdraw") ? localStorage.getItem("withdraw") : true
+    );
+
+    const edit = () => {
+      name = localStorage.setItem("name", editname);
+    };
+
+    const contractABI = abi.abi;
+    const contractAddress = "0x77086505161c2eee97F07F0f49c5A5AD04aBe464";
+
+    const withdraw = async () => {
+      if (typeof ethereum !== "undefined") {
+        console.log("MetaMask is installed!");
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const tempSigner = provider.getSigner();
+        const contract = new ethers.Contract(
+          contractAddress,
+          contractABI,
+          tempSigner
+        );
+        const transaction = await contract.return_money(addr);
+        await transaction.wait();
+        showbutton = localStorage.setItem("withdraw", false);
+        localStorage.setItem("withdraw", false);
+      } else {
+        console.log("Metamask not found!");
+      }
+    };
+
+  async function getPlayer1 () {
+    await fetch( `http://localhost:3008/auction/${addr}` )
+      .then( ( res ) => {
+        res.json().then( ( data1 ) => {
+          setplayerid( data1[ 2 ] );
+          console.log( data1[ 2 ])
+        } );
+      } )
+      .catch( ( e ) => console.log( e.message ) );
+  }
+
+
+  async function topaddressfn() {
+    await fetch("http://localhost:3008/auction/") 
+      .then((res) => {
+        res.json().then((resp) => {
+          console.log(resp);
+          if (resp.includes(addr)) {
+            localStorage.setItem("getnft", true);
+          }
+        });
+      })
+      .catch((e) => console.log(e.message));
+  }
+
+  const claimNft=async()=>{
+    await contract.awardItem(addr,MetaData[playerid])
+    console.log(MetaData[playerid])
+  }
+
+  const updateSellAmt=async()=>{
+    await auction.updatePrice(playerid+1,sellVal)
+  }
+
+  useEffect( () => {
+    getPlayer1()
+  },[])
+
+
+  console.log(typeof sendnftbut[0])
   
   return (
     <div className="Nav">
       <Navbar />
       <div className="profile">
-        {Object.keys(data).length != 0 ? (
+        {playerid != 0 ? (
           <img
-            src={CategoryData[data[0].playerId][1]}
+            src={CategoryData[playerid][1]}
             className="profile-img"
           />
         ) : (
@@ -96,22 +181,17 @@ const Profile = () => {
                 </div>
               </div>
 
-              <p className="address">
-                {account.substring(0, 5) +
-                  "..." +
-                  account.substring(account.length - 5, account.length)}
-              </p>
             </div>
           </div>
 
-          {Object.keys(data).length != 0 ? (
+          {playerid != 0 ? (
             <h1 className="title1">You currently own</h1>
           ) : (
             <h1 className="title1">Invest in cool player NFTs</h1>
           )}
           <h1 className="title2">
-            {Object.keys(data).length != 0 ? (
-              CategoryData[data[0].playerId][0]
+            {playerid != 0 ? (
+              CategoryData[playerid][0]
             ) : (
               <h1 className="title3">
                 Go the trading page and start your journey!
@@ -123,7 +203,7 @@ const Profile = () => {
             <div className="icon1">
               <div></div>
               <p className="subtitle">
-                {Object.keys(data).length != 0 ? data[0].score : " -- "}
+                {playerid != 0 ? 'Live API Reqd' : " -- "}
                 Score
               </p>
             </div>
@@ -131,21 +211,21 @@ const Profile = () => {
               <div>
                 <img src="./Coin.svg" />
               </div>
-              <p className="subtitle mr-1">
+              {/* <p className="subtitle mr-1">
                 {Object.keys(data).length != 0
                   ? data[0].history.length
                   : " -- "}
                 Transactions
-              </p>
+              </p> */}
             </div>
             <div className="icon3">
               <div>
                 <img src="./Stats.svg" />
               </div>
-              <p className="subtitle">
+              {/* <p className="subtitle">
                 {Object.keys(data).length != 0 ? data.leaderboard : " -- "}
                 Rank
-              </p>
+              </p> */}
             </div>
           </div>
           <p className="subtitle5 mt-4 ml-5">
@@ -157,7 +237,7 @@ const Profile = () => {
             uses.
           </p>
 
-          {Object.keys(data).length != 0 ? (
+          {playerid != 0 ? (
             <button
               type="button"
               class="sellbut"
@@ -169,13 +249,12 @@ const Profile = () => {
           ) : null}
 
           <div className="d-flex mt-2">
-            {Object.keys(data).length == 0 && showbutton[0] === "true" ? (
+            {playerid == 0 && showbutton[0] == "true" ? (
               <button class="sellbut" type="button" onClick={() => withdraw()}>
                 Withdraw Funds!
               </button>
             ) : null}
 
-            {account === "0xD502bE9BffE489dF94ad7F0a9b81E52d7731a5ad" ? (
               <button
                 class="sellbut"
                 type="button"
@@ -183,9 +262,8 @@ const Profile = () => {
               >
                 Get address
               </button>
-            ) : null}
 
-            {sendnftbut[0] === "true" ? (
+            {sendnftbut[0] === 'true' ? (
               <button class="sellbut" type="button" onClick={() => claimNft()}>
                 Claim NFT
               </button>
@@ -250,7 +328,7 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          {Object.keys(data).length != 0 ? (
+          {/* {playerid != 0 ? (
             <>
               <h1 className="transaction">Previous Transactions</h1>
               <table class="table table-borderless text-white mb-5">
@@ -274,7 +352,7 @@ const Profile = () => {
             <h1 className="transaction mb-5">
               Your Transactions will be shown here!
             </h1>
-          )}
+          )} */}
         </div>
       </div>
       <Footer />

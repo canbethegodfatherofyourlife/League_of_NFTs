@@ -1,108 +1,13 @@
 export const MetaData = {
-    '1': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "MS Dhoni",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "CSK"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Batter and wk"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "4 times winning captain"
-            },
-        ]
-    },
+    '1': 'QmbAoaAMiU53CMQM53eJ49Sgb3kFpBT1LMh9gmcaRjdkre',
 
-    '2': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Ravindra Jadeja",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "CSK"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "All rounder"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "Jadeja bought by CSK for 9.8 Crore"
-            },
-        ]
-    },
+    '2': 'QmU2JpjZrPx9gwRVedHkrSEEPqhpLv9jFVCcRWHMf9D5UZ',
 
-    '3': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Moeen Ali",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "CSK"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "All rounder"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "Part of the victorious World Cup squad"
-            },
-        ]
-    },
+    '3': 'QmSoy6aKi5mQYHAsePRER3Y1YrMWnJiv9tz53XBS3TTfv6',
 
-    '4': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Deepak Chahar",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "CSK"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Fast Bowler"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "sold for INR 14 crore to CSK"
-            },
-        ]
-    },
+    '4': 'QmWj9MwNVhWCvJXEEwkD8T5J6aWZ7v1tk6vN73eT3ithh7',
 
-    '5': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Mitchell Santner",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "CSK"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "All rounder"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "batter lower down the order and an outstanding fielder"
-            },
-        ]
-    },
+    '5': 'QmajXSTj7NPdiGJ2FggJaLSyWcNFUeTLByAMR5pB9bwL93',
 
     '6': {
         "description": "These are awesome NFTs created by PNL",

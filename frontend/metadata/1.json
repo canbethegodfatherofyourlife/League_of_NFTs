@@ -1,0 +1,20 @@
+{
+    "description": "These are awesome NFTs created by PNL",
+    "external_url": "",
+    "image": "",
+    "name": "MS Dhoni",
+    "attributes": [
+        {
+            "trait_type": "Team",
+            "value": "CSK"
+        },
+        {
+            "trait_type": "Domain",
+            "value": "Batter and wk"
+        },
+        {
+            "trait_type": "Achievements",
+            "value": "4 times winning captain"
+        }
+    ]
+}
