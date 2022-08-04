@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Auction = require("../models/Auction");
+const User = require("../models/User");
 
 // POST request to send their bids to Auction Table
 router.post("/:id/:id1", async function (req, res) {
@@ -109,6 +110,18 @@ router.get( '/', async function ( req, res ) {
                     addressList.push( addressListById[ j ].address )
                     topaddressList.push( addressListById[ j ].address )
                 }
+
+                for ( var k = 0; k < addressList.length; k++ ) {
+                  let user = await User.create( {
+                      address: addressList[ k ],
+                      score: 0,
+                      playerId: addressListById[ k ].playerId,
+                      history: [ addressListById[ k ].playerId ],
+                      sell: false,
+                      sellAmount: 0
+                  } )
+                  user.save()
+              }
 
             }
             res.send( topaddressList )

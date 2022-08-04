@@ -67,25 +67,8 @@ const Auction = () => {
     }
   };
 
-  // async function update(){
-  //   await fetch(`http://localhost:3005/auction/${addr}/${playerId}`,{
-  //     method: 'PATCH',
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify({
-  //       bid:30
-  //   })
-  //   }).then((res) => {
-  //     res.json().then((resp) => {
-  //       console.log(resp)
-  //     })
-  //   })
-  // }
-
   async function placebid () {
-    await fetch( `http://localhost:3005/auction/${ addr }/${ playerId }`, {
+    await fetch( `http://localhost:3008/auction/${ addr }/${ playerId }`, {
       method: "POST",
       headers: {
         'Accept': "application/json",
@@ -104,7 +87,7 @@ const Auction = () => {
   }
 
   async function getPlayer () {
-    await fetch( `http://localhost:3005/auction/${ addr }` )
+    await fetch( `http://localhost:3008/auction/${ addr }` )
       .then( ( res ) => {
         res.json().then( ( data1 ) => {
           setplaceBid( data1[ 0 ] );
@@ -116,7 +99,7 @@ const Auction = () => {
   }
 
   async function getData1 ( playerId ) {
-    await fetch( `http://localhost:3005/auction/${ addr }/${ playerId }` )
+    await fetch( `http://localhost:3008/auction/${ addr }/${ playerId }` )
       .then( ( res ) => {
         res.json().then( ( data1 ) => {
           setData( data1 );
@@ -126,7 +109,7 @@ const Auction = () => {
   }
 
   const updateSellAmt = async () => {
-    await fetch( `http://localhost:3005/auction/${ addr }/${ playerId }`, {
+    await fetch( `http://localhost:3008/auction/${ addr }/${ playerId }`, {
       method: "PATCH",
       headers: {
         Accept: "application/json",

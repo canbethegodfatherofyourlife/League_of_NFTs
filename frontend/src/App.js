@@ -13,10 +13,8 @@ function App() {
         <Route path="/" component={Home} exact />
         <Route path="/profile" component={Profile} />
         <Route path="/auction" component={Auction} />
-        {/* <Route path="/auction" component={Auction} />
-        <Route path="/profile" component={Profile} />
+        <Route path="/trading" component={Trading} />
         <Route path="/leaderboard" component={Leaderboard} />
-        <Route path="/trading" component={Trading} /> */}
       </Switch>
     </div>
   );

@@ -1,13 +1,123 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { ethers } from 'ethers';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/trading.css";
+import { PlayerIdData } from "../playerToid";
+import { iplData } from "../iplData";
 import { CategoryData } from "../data";
-
+import GetAccount from "../hooks/GetAccount"
+import GetAuction from "../hooks/GetAuction"
+import GetContract from '../hooks/GetContract'
+import GetSigner from '../hooks/GetSigner'
 
 const Trading = () => {
- 
+  const [showPlayer, setshowPlayer] = useState(false);
+  const [showImage, setshowImage] = useState(false);
+  const [showBut, setshowBut] = useState(true);
+  const [sellerAddress, setsellerAddress] = useState("");
+  const addr = GetAccount();
+  const [data, setData] = useState([]);
+  const [team, setTeam] = useState([]);
+  const [playerId, setPlayerId] = useState(0);
+  const [sellamt, setsellamt] = useState(0);
+  const[TokenID,setTokenID]=useState('');
+  const signer = GetSigner();
+
+
+  const teamNameHandler = (e) => {
+    setTeam(iplData[e]);
+    setshowPlayer(true);
+  };
+
+  const contract = GetContract();
+  const auction = GetAuction();
+  const account = GetAccount();
+
+const showToken=async(sellerAddres)=>{
+  console.log(sellerAddres)
+  var id = await contract.showTokenID(ethers.utils.getAddress(sellerAddres));
+  setTokenID(id.toString());
+  console.log('Token',id.toString());
+}
+
+
+
+const approveNft = async() => {
+    await contract.approve(account,TokenID);
+}
+
+const transferNft = async() => {
+    const owner = await contract.ownerOf(TokenID);
+    console.log(owner);
+    const tx = await signer.sendTransaction({
+        to: owner,
+        value : ethers.utils.parseEther(sellamt.toString()), //Pass amount decided by the seller in the auction contract
+    })
+    await contract.transferFrom(owner,account,TokenID);
+    console.log(tx);
+
+    await fetch( `http://localhost:3008/trading/${ addr }/${ playerId }/${ sellerAddress }`, {
+      method: "PATCH",
+      headers: {
+        'Accept': "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify( [ {
+        playerId: 0,
+        sell: false,
+        sellAmount: 0
+      }, {
+        playerId: playerId
+      } ] ),
+    } ).then( ( res ) => {
+      res.json().then( ( resp ) => {
+        console.log( 'Done!' )
+      } );
+    } );
+}
+
+  const playerNameHandler = async(e) => {
+    setshowImage(true);
+    setPlayerId(PlayerIdData[e]);
+    await getAddress(PlayerIdData[e]);
+    await getData1(PlayerIdData[e]);
+  };
+
+  async function getData1 ( playerId ) {
+    await fetch( `http://localhost:3008/trading/${ addr }/${ playerId }` )
+      .then( ( res ) => {
+        res.json().then( ( data1 ) => {
+          setData( data1 );
+          return;
+        } );
+      } )
+      .catch( ( e ) => console.log( e.message ) );
+  }
+
+
+  async function getAddress ( playerId ) {
+    await fetch( `http://localhost:3008/trading/${ playerId }` )
+      .then( ( res ) => {
+        res.json().then( ( data1 ) => {
+          if ( data1[0][0] === false ) {
+            setshowBut( false );
+          } else {
+            setsellerAddress( data1[ 2 ] )
+            showToken(data1[2])
+            setsellamt( data1[ 1 ] )
+            setshowBut( true );
+          }
+          return;
+        } );
+      } )
+      .catch( ( e ) => console.log( e.message ) );
+  }
+
+  console.log(sellerAddress,sellamt);
+  
+
 
   return (
     <div className="Nav">
@@ -115,11 +225,19 @@ const Trading = () => {
             ))}
           </div>
           {showBut && (
-            <button class="button-75" role="button">
-              <span class="text" onClick={() => buy()}>
+            <>
+            <button class="button-75" role="button" onClick={()=>approveNft()} >
+              <span class="text" >
+                Approve NFT Transfer
+              </span>
+            </button>
+            <button class="button-75 mt-2" role="button" onClick={()=>transferNft()} >
+              <span class="text" >
                 BUY IT NOW!
               </span>
             </button>
+            </>
+
           )}
         </div>
       )}

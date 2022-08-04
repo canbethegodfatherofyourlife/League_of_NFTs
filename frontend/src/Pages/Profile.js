@@ -15,6 +15,7 @@ const Profile = () => {
   const contract = GetContract();
   const auction = GetAuction();
   const addr = GetAccount()
+  const [data1, setData1] = useState([])
   let sendnftbut = useState(
     localStorage.getItem("getnft") ? localStorage.getItem("getnft") : false
   );
@@ -89,12 +90,23 @@ const Profile = () => {
     await auction.updatePrice(playerid+1,sellVal)
   }
 
+  async function getData1(){
+    await fetch(`http://localhost:3008/leaderboard/${addr}`)
+    .then((res) => {
+      res.json().then((data1) => {
+        setData1(data1);
+      });
+    })
+    .catch((e) => console.log(e.message));
+  }
+
   useEffect( () => {
     getPlayer1()
+    getData1()
   },[])
 
 
-  console.log(typeof sendnftbut[0])
+  console.log(data1)
   
   return (
     <div className="Nav">
@@ -203,7 +215,7 @@ const Profile = () => {
             <div className="icon1">
               <div></div>
               <p className="subtitle">
-                {playerid != 0 ? 'Live API Reqd' : " -- "}
+                {data1.length != 0 ? data1[0].score : " -- "} &nbsp;
                 Score
               </p>
             </div>
@@ -211,21 +223,21 @@ const Profile = () => {
               <div>
                 <img src="./Coin.svg" />
               </div>
-              {/* <p className="subtitle mr-1">
-                {Object.keys(data).length != 0
-                  ? data[0].history.length
+               <p className="subtitle mr-1">
+                {data1.length != 0
+                  ? data1[0].history.length
                   : " -- "}
                 Transactions
-              </p> */}
+              </p>  
             </div>
             <div className="icon3">
               <div>
                 <img src="./Stats.svg" />
               </div>
-              {/* <p className="subtitle">
-                {Object.keys(data).length != 0 ? data.leaderboard : " -- "}
+               <p className="subtitle">
+                {data1.length != 0 ? data1.leaderboard : " -- "}
                 Rank
-              </p> */}
+              </p> 
             </div>
           </div>
           <p className="subtitle5 mt-4 ml-5">
@@ -328,7 +340,7 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          {/* {playerid != 0 ? (
+          {data1.length != 0 ? (
             <>
               <h1 className="transaction">Previous Transactions</h1>
               <table class="table table-borderless text-white mb-5">
@@ -339,7 +351,7 @@ const Profile = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {data[0].history.map((item) => (
+                  {data1[0].history.map((item) => (
                     <tr>
                       <th scope="row">{item}</th>
                       <td>{CategoryData[item][0]}</td>
@@ -352,7 +364,7 @@ const Profile = () => {
             <h1 className="transaction mb-5">
               Your Transactions will be shown here!
             </h1>
-          )} */}
+          )}
         </div>
       </div>
       <Footer />

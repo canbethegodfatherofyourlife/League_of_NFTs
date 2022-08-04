@@ -20,7 +20,7 @@ const Navbar1 = () => {
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav justify-content-center align-items-center">
       <li class="nav-item mr-4">
         <NavLink id='p2' to="/profile">Profile</NavLink>
       </li>
@@ -33,10 +33,14 @@ const Navbar1 = () => {
       <li class="nav-item mr-4">
         <NavLink id='p5' to="/trading">Trading</NavLink>
       </li>
+      <li className='mr-auto nav-item'>
+      <Connect />
+      </li>
+
     </ul>
   </div>
         </nav>
-        <Connect />
+        
     </div>
   )
 }
