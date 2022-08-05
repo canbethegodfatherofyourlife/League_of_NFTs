@@ -21,18 +21,23 @@ Play & Earn Game where users leverage their cricketing knowledge to earn money
 
 ## Home Page
 ![po1](https://user-images.githubusercontent.com/77283508/183215716-bf4dbedc-53c6-40d0-8bb0-5749d16a130b.PNG)
+![po6](https://user-images.githubusercontent.com/77283508/183216474-3e6dc165-6c96-466f-86b1-adbf4c64c351.PNG)
+![po7](https://user-images.githubusercontent.com/77283508/183216487-979b2be5-b305-4ff5-8a48-f9a549473886.PNG)
+
 
 ## Profile Page
 ![po2](https://user-images.githubusercontent.com/77283508/183215742-bb031105-a703-408f-b958-a374b201ea57.PNG)
 
 ## Auction Page
 ![po4](https://user-images.githubusercontent.com/77283508/183215822-446406b0-8738-4e16-aed3-60acdd9f740d.PNG)
+![po8](https://user-images.githubusercontent.com/77283508/183216511-648d1069-d69a-4a6c-b202-f54d05ddfe89.PNG)
 
 ## Leaderboard Page
 ![po3](https://user-images.githubusercontent.com/77283508/183215799-65649fdb-a157-4275-951b-bc8e4631ff13.PNG)
 
 ## Trading Page
 ![po5](https://user-images.githubusercontent.com/77283508/183215842-754c61fe-d24f-4370-bc86-137c78dffe5d.PNG)
+![po9](https://user-images.githubusercontent.com/77283508/183216530-daca8815-df73-4de4-8dc0-5a03fffe8046.PNG)
 
 ## Tech Stack
 
