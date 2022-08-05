@@ -27,7 +27,7 @@
   font-family: "Bangers", cursive !important;
   font-style: normal;
   font-weight: 415 !important;
-  font-size: 10px !important; 
+  font-size: 70px !important; 
 }
 
 .home {
@@ -68,7 +68,7 @@
   padding: 12px 20px;
   gap: 10px;
   height: 56px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(97, 90, 216, 0.73);
   color: #fff;
   order: 0;
   flex-grow: 0;
@@ -266,8 +266,9 @@
 }
 
 .bet{
-  margin: 5vw;
-  max-width: 30vw;
+  margin: 6vw;
+  max-width: 27vw;
+  border-radius: 50%;
 }
 
 .accordion{

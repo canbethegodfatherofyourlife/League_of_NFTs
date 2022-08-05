@@ -1,5 +1,5 @@
 .margined{
-    margin-right: 30vw;;
+    margin-right: 19vw;;
 }
 
 .Nav{
@@ -34,11 +34,12 @@
 
 #p5{
     color: #fff !important;
-    margin-right: 200px;
+    /* margin-right: 10vw; */
 }
 
 .logo {
-    max-height: 10vh;
+    max-height: 9vh;
+    margin-right: 10px;
   }
 
   .wallet {

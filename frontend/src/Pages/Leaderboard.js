@@ -34,7 +34,7 @@ const Leaderboard = () => {
     )
   })
 
-  const pageCount = Math.ceil(data.length/usersPerpage)
+  const pageCount = Math.ceil((data.length-3)/usersPerpage)
 
   const PageChange = ({selected}) => {
     setpagenumber(selected)
@@ -73,6 +73,21 @@ const Leaderboard = () => {
     <div className="Nav">
       <Navbar />
       <div className="leftright">
+        <div className="right">
+          <h1 className="head1">See who's on top</h1>
+          <div className="d-flex flex-row justify-center home">
+            <h1 className="head2"> of the game</h1>
+          </div>
+          <p className="para">
+            Here's your position on the leaderboard. If you have having a high score, good going! You can book short term profits by selling your in-form player.
+            If it's not going well, no worries, sell your player and try to get hold of a player who can shoot you up in the leaderboard.
+          </p>
+          <article className="score1 mt-5">
+            {data1.length != 0 && (<h1 className="score2">Your position on the Leaderboard - {data1.leaderboard} </h1>)}
+            {data1.length == 0 && (<h1 className="score2"> Invest in super cool player NFTs </h1>)}
+          </article>
+
+        </div>
         <div className="left" id="style-14">
           <div className="toppers">
             <div className="leader-holder">
@@ -151,27 +166,6 @@ const Leaderboard = () => {
           disabledClassName={"paginationDisabled"}
           activeClassName={"paginationActive"}
            />
-        </div>
-        <div className="right">
-          <h1 className="head1">See who's on top</h1>
-          <div className="d-flex flex-row justify-center home">
-            <div className="liendiv">
-              <hr className="line mr-2" />
-            </div>
-            <h1 className="head2"> of the game</h1>
-          </div>
-          <p className="para">
-            Radio signals transmitted from a controller device control the
-            actions of a remote device. In radio communication, used in radio
-            and television broadcasting, cell phoation, used in radio and
-            television broadcasting, cell phones, two-way radios, wireless
-            networking and satellite communication among numerous other uses.
-          </p>
-          <article className="score1 mt-5">
-            {data1.length != 0 && (<h1 className="score2">Your position on the Leaderboard - {data1.leaderboard} </h1>)}
-            {data1.length == 0 && (<h1 className="score2"> Invest in super cool player NFTs </h1>)}
-          </article>
-
         </div>
       </div>
       <Footer />

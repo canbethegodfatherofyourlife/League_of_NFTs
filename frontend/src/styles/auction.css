@@ -1,7 +1,7 @@
 .Details {
   width: 70%;
   margin: auto;
-  margin-top: 10vh;
+  margin-top: 2vh;
   margin-bottom: 5%;
 }
 
@@ -46,18 +46,6 @@
 
 .teamName:hover {
   background-image: linear-gradient(to left, #f7f5f2, #3ab4f2);
-}
-
-.tradingButton {
-  width: 150px;
-  font-size: larger;
-  border-radius: 10px;
-  border-color: white;
-  border-width: 2px;
-  background-color: #fff;
-  color: #000;
-  margin: 0px 20px;
-  padding: 5px;
 }
 
 .Panel {
@@ -153,4 +141,54 @@ div.input-block input:focus + span.placeholder {
   font-family: "Bangers", cursive !important;
   color: #7a4495 !important;
   font-size: 40px !important;
+  margin-left: 15vw;
+}
+
+.selectTeamDiv1 {
+  font-family: "Bangers", cursive !important;
+  color: #7a4495 !important;
+  font-size: 40px !important;
+  margin-left: 3vw;
+}
+
+.ht{
+  color: #fff;
+  margin-left: 15vw;
+  margin-top: 2vh;
+}
+
+.button-63 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 10px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: larger;
+  justify-content: center;
+  width: 150px;
+  padding: 5px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  /* margin-top: 25px; */
+}
+
+
+.tradingButton {
+  width: 150px;
+  font-size: larger;
+  border-radius: 10px;
+  border-color: white;
+  border-width: 2px;
+  background-color: #fff;
+  color: #000;
+  margin: 0px 20px;
+  padding: 5px;
 }

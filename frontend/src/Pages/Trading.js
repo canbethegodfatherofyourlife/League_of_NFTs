@@ -122,6 +122,8 @@ const transferNft = async() => {
   return (
     <div className="Nav">
       <Navbar />
+      <div className="selectTeamDiv mt-5">TRADE YOUR PLAYER NFTs</div>
+      <h2 className="ht">Select a team and choose the player you want to trade.</h2>
       <div className="Details">
         <div class="accordion" id="accordionExample">
           <div class="card">
@@ -134,7 +136,7 @@ const transferNft = async() => {
                 aria-expanded="true"
                 aria-controls="collapseOne"
               >
-                <div className="selectTeamDiv">SELECT YOUR TEAM!</div>
+                <div className="selectTeamDiv1">SELECT YOUR TEAM!</div>
               </button>
             </h2>
           </div>
@@ -149,20 +151,16 @@ const transferNft = async() => {
               className="teamName mt-3"
               onClick={() => teamNameHandler("CSK")}
             >
-              {" "}
-              CSK{" "}
+              CSK
             </button>
             <button className="teamName" onClick={() => teamNameHandler("MI")}>
-              {" "}
-              MI{" "}
+              MI
             </button>
             <button className="teamName" onClick={() => teamNameHandler("GT")}>
-              {" "}
-              GT{" "}
+              GT
             </button>
             <button className="teamName" onClick={() => teamNameHandler("RR")}>
-              {" "}
-              RR{" "}
+              RR
             </button>
           </div>
         </div>

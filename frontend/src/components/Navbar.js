@@ -11,8 +11,10 @@ const Navbar1 = () => {
   return (
     <div>
         <nav class="navbar navbar-expand-lg cl">
-  <div className="margined">
-    <img src="./logo.PNG" className="logo" />
+  <div className="margined d-flex justify-content-center align-items-center">
+    <NavLink to='/'>
+      <img src="./logo1.png" className="logo" />
+    </NavLink>
     <NavLink id='p1' to="/">Pro NFT League</NavLink>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,11 +35,10 @@ const Navbar1 = () => {
       <li class="nav-item mr-4">
         <NavLink id='p5' to="/trading">Trading</NavLink>
       </li>
-      <li className='mr-auto nav-item'>
-      <Connect />
-      </li>
-
     </ul>
+    <div className='nav-item ml-auto'>
+          <Connect />
+    </div>
   </div>
         </nav>
         

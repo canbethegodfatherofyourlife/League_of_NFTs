@@ -49,9 +49,10 @@
   width: 50%;
   margin: auto;
   height: 600px;
-  background-image: linear-gradient(to left, #000000, #3a3845);
+  background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
   margin-bottom: 80px;
   border-radius: 20px;
+  
 }
 
 .PlayerNFT {
@@ -67,6 +68,7 @@
   width: 30%;
   margin-top: 100px;
   margin-left: 22px;
+  font-size: 25px;
 }
 
 .priceButton {
@@ -140,4 +142,24 @@
   font-family: "Bangers", cursive !important;
   color: #7a4495 !important;
   font-size: 40px !important;
+}
+
+.selectTeamDiv {
+  font-family: "Bangers", cursive !important;
+  color: #7a4495 !important;
+  font-size: 40px !important;
+  margin-left: 15vw;
+}
+
+.selectTeamDiv1 {
+  font-family: "Bangers", cursive !important;
+  color: #7a4495 !important;
+  font-size: 40px !important;
+  margin-left: 3vw;
+}
+
+.ht{
+  color: #fff;
+  margin-left: 15vw;
+  margin-top: 2vh;
 }

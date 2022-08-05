@@ -8,6 +8,7 @@ import GetAccount from "../hooks/GetAccount"
 import abi from '../artifacts/auction.json'
 import GetContract from '../hooks/GetContract';
 import GetAuction from '../hooks/GetAuction';
+import { Connect } from '../components/ConnectButton';
 import {ethers} from 'ethers'
 
 const Profile = () => {
@@ -106,270 +107,284 @@ const Profile = () => {
   },[])
 
 
-  console.log(data1)
+  console.log(addr)
+
+  if((typeof addr === 'string') || addr.props.children !== 'Disconnected'){
+    return (
+      <div className="Nav">
+        <Navbar />
+        <div className="profile">
+          {playerid != 0 ? (
+            <img
+              src={CategoryData[playerid][1]}
+              className="profile-img full-withradius border"
+            />
+          ) : (
+            <img src="./logo.PNG" className="profile-img" />
+          )}
+          <div className="profile-content">
+            <div className="profile-info">
+              <img src="./Ellipse2.svg" className="mt-1 mr-2 ml-1" />
+              <div className="profile-info2">
+                <div className="profile-info1">
+                  <p className="username">{name}</p>
+                  <p></p>
+                  <img
+                    src="./Vector.svg"
+                    className="ml-2"
+                    data-toggle="modal"
+                    data-target="#exampleModal1"
+                  />
+                </div>
   
-  return (
-    <div className="Nav">
-      <Navbar />
-      <div className="profile">
-        {playerid != 0 ? (
-          <img
-            src={CategoryData[playerid][1]}
-            className="profile-img"
-          />
-        ) : (
-          <img src="./logo.PNG" className="profile-img" />
-        )}
-        <div className="profile-content">
-          <div className="profile-info">
-            <img src="./Ellipse2.svg" className="mt-1 mr-2 ml-1" />
-            <div className="profile-info2">
-              <div className="profile-info1">
-                <p className="username">{name}</p>
-                <img
-                  src="./Vector.svg"
-                  className="ml-2"
-                  data-toggle="modal"
-                  data-target="#exampleModal1"
-                />
-              </div>
-
-              <div
-                class="modal fade"
-                id="exampleModal1"
-                tabindex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">
-                        Enter your nickname
-                      </h5>
-                      <button
-                        type="button"
-                        class="close"
-                        data-dismiss="modal"
-                        aria-label="Close"
-                      >
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-
-                    <div class="modal-body">
-                      <div class="input-block">
-                        <input
-                          type="text"
-                          name="input-text"
-                          id="input-text"
-                          required
-                          spellcheck="false"
-                          value={editname}
-                          onChange={(e) => setname(e.target.value)}
-                        />
-                        <span class="placeholder">Enter your nickname</span>
+                <div
+                  class="modal fade"
+                  id="exampleModal1"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          Enter your nickname
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+  
+                      <div class="modal-body">
+                        <div class="input-block">
+                          <input
+                            type="text"
+                            name="input-text"
+                            id="input-text"
+                            required
+                            spellcheck="false"
+                            value={editname}
+                            onChange={(e) => setname(e.target.value)}
+                          />
+                          <span class="placeholder">Enter your nickname</span>
+                        </div>
+                      </div>
+  
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal"
+                          onClick={() => setname("")}
+                        >
+                          Close
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-primary"
+                          onClick={() => edit()}
+                        >
+                          Save changes
+                        </button>
                       </div>
                     </div>
+                  </div>
+                </div>
 
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-dismiss="modal"
-                        onClick={() => setname("")}
-                      >
-                        Close
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        onClick={() => edit()}
-                      >
-                        Save changes
-                      </button>
+                <p className="address">
+                {addr.substring(0, 5) +
+                  "..." +
+                  addr.substring(addr.length - 5, addr.length)}
+              </p>
+              </div>
+            </div>
+  
+            {playerid != 0 ? (
+              <h1 className="title1">You currently own</h1>
+            ) : (
+              <h1 className="title1">Invest in cool player NFTs</h1>
+            )}
+            <h1 className="title2">
+              {playerid != 0 ? (
+                CategoryData[playerid][0]
+              ) : (
+                <h1 className="title3">
+                  Go the trading page and start your journey!
+                </h1>
+              )}
+            </h1>
+            <p className="subtitle5 mt-5 mb-5 ml-1">
+              Here's your score we calculate by summing up the scores of the players you have held till now. Also, there's the number of transactions you have done till now and your position on the leaderboard. 
+            </p>
+            <div className="icons-desc">
+              <div className="icon1">
+                <div></div>
+                <p className="subtitle">
+                  {data1.length != 0 ? data1[0].score : " -- "}
+                  Score
+                </p>
+              </div>
+              <div className="icon2">
+                <div>
+                  <img src="./Coin.svg" />
+                </div>
+                 <p className="subtitle mr-1">
+                  {data1.length != 0
+                    ? data1[0].history.length
+                    : " -- "}
+                  Transactions
+                </p>  
+              </div>
+              <div className="icon3">
+                <div>
+                  <img src="./Stats.svg" />
+                </div>
+                 <p className="subtitle">
+                  {data1.length != 0 ? data1.leaderboard : " -- "}
+                  Rank
+                </p> 
+              </div>
+            </div>
+            <p className="subtitle5 mt-5 mb-5 ml-1">
+              If you are among the top 20% bidders, congrats man you can claim your player NFT right away.If you want to buy another player you can just sell the current NFT by listing it with the price you feel fit.
+              After the tournament begins no need to claim NFT as it'll be transferred directly to your account. 
+            </p>
+  
+            <div className="d-flex mt-2">
+               {playerid != 0 ? (
+              <button
+                type="button"
+                class="sellbut"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                SELL NFT
+              </button>
+                ) : null}
+
+              {playerid == 0 && showbutton[0] == "true" ? (
+                <button class="sellbut" type="button" onClick={() => withdraw()}>
+                  Withdraw Funds!
+                </button>
+              ) : null}
+  
+                <button
+                  class="sellbut"
+                  type="button"
+                  onClick={() => topaddressfn()}
+                >
+                  Get address
+                </button>
+  
+              {sendnftbut[0] === 'true' ? (
+                <button class="sellbut" type="button" onClick={() => claimNft()}>
+                  Claim NFT
+                </button>
+              ) : null}
+            </div>
+  
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Sell or Update Price
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+  
+                  <div class="modal-body">
+                    <div class="input-block">
+                      <input
+                        type="text"
+                        name="input-text"
+                        id="input-text"
+                        required
+                        spellcheck="false"
+                        value={sellVal}
+                        onChange={(e) => setsellVal(e.target.value)}
+                      />
+                      <span class="placeholder">Enter Price</span>
                     </div>
                   </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          {playerid != 0 ? (
-            <h1 className="title1">You currently own</h1>
-          ) : (
-            <h1 className="title1">Invest in cool player NFTs</h1>
-          )}
-          <h1 className="title2">
-            {playerid != 0 ? (
-              CategoryData[playerid][0]
-            ) : (
-              <h1 className="title3">
-                Go the trading page and start your journey!
-              </h1>
-            )}
-          </h1>
-
-          <div className="icons-desc">
-            <div className="icon1">
-              <div></div>
-              <p className="subtitle">
-                {data1.length != 0 ? data1[0].score : " -- "} &nbsp;
-                Score
-              </p>
-            </div>
-            <div className="icon2">
-              <div>
-                <img src="./Coin.svg" />
-              </div>
-               <p className="subtitle mr-1">
-                {data1.length != 0
-                  ? data1[0].history.length
-                  : " -- "}
-                Transactions
-              </p>  
-            </div>
-            <div className="icon3">
-              <div>
-                <img src="./Stats.svg" />
-              </div>
-               <p className="subtitle">
-                {data1.length != 0 ? data1.leaderboard : " -- "}
-                Rank
-              </p> 
-            </div>
-          </div>
-          <p className="subtitle5 mt-4 ml-5">
-            In radio communication, used in radio and television broadcasting,
-            cell phones, two-way radios, wireless networking and satellite
-            communication among numerous other uses.In radio communication, used
-            in radio and television broadcasting, cell phones, two-way radios,
-            wireless networking and satellite communication among numerous other
-            uses.
-          </p>
-
-          {playerid != 0 ? (
-            <button
-              type="button"
-              class="sellbut"
-              data-toggle="modal"
-              data-target="#exampleModal"
-            >
-              SELL NFT
-            </button>
-          ) : null}
-
-          <div className="d-flex mt-2">
-            {playerid == 0 && showbutton[0] == "true" ? (
-              <button class="sellbut" type="button" onClick={() => withdraw()}>
-                Withdraw Funds!
-              </button>
-            ) : null}
-
-              <button
-                class="sellbut"
-                type="button"
-                onClick={() => topaddressfn()}
-              >
-                Get address
-              </button>
-
-            {sendnftbut[0] === 'true' ? (
-              <button class="sellbut" type="button" onClick={() => claimNft()}>
-                Claim NFT
-              </button>
-            ) : null}
-          </div>
-
-          <div
-            class="modal fade"
-            id="exampleModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">
-                    Sell or Update Price
-                  </h5>
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-
-                <div class="modal-body">
-                  <div class="input-block">
-                    <input
-                      type="text"
-                      name="input-text"
-                      id="input-text"
-                      required
-                      spellcheck="false"
-                      value={sellVal}
-                      onChange={(e) => setsellVal(e.target.value)}
-                    />
-                    <span class="placeholder">Enter Price</span>
+  
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                      onClick={() => setsellVal(0)}
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      onClick={() => updateSellAmt()}
+                    >
+                      Save changes
+                    </button>
                   </div>
                 </div>
-
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-dismiss="modal"
-                    onClick={() => setsellVal(0)}
-                  >
-                    Close
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    onClick={() => updateSellAmt()}
-                  >
-                    Save changes
-                  </button>
-                </div>
               </div>
             </div>
-          </div>
-          {data1.length != 0 ? (
-            <>
-              <h1 className="transaction">Previous Transactions</h1>
-              <table class="table table-borderless text-white mb-5">
-                <thead>
-                  <tr className="tablehead">
-                    <th scope="col">Card Player Id</th>
-                    <th scope="col">Card Player Name</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data1[0].history.map((item) => (
-                    <tr>
-                      <th scope="row">{item}</th>
-                      <td>{CategoryData[item][0]}</td>
+            {data1.length != 0 ? (
+              <>
+                <h1 className="transaction">Previous Transactions</h1>
+                <table class="table table-borderless text-white mb-5">
+                  <thead>
+                    <tr className="tablehead">
+                      <th scope="col">Card Player Id</th>
+                      <th scope="col">Card Player Name</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </>
-          ) : (
-            <h1 className="transaction mb-5">
-              Your Transactions will be shown here!
-            </h1>
-          )}
+                  </thead>
+                  <tbody>
+                    {data1[0].history.map((item) => (
+                      <tr>
+                        <th scope="row">{item}</th>
+                        <td>{CategoryData[item][0]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </>
+            ) : (
+              <h1 className="transaction mb-5">
+                Your Transactions will be shown here!
+              </h1>
+            )}
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  );
+    );
+  }else{
+    return(
+      <div className="prof">
+        <Connect />
+      </div>
+    )
+  }
+  
+ 
 };
 
 export default Profile;

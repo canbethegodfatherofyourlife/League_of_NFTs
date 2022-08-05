@@ -20,14 +20,12 @@ const Home = () => {
             Are you the crazy cricket fan who can't afford to miss a single IPL match? You have the uncanny ability to memorise every single stats of players and correctly predict who's gonna do well! But, alas there is no monetary incentive 😭. Don't worry we are here just for you guys! 
           </p>
         </div>
-        <img src='sports-betting.jpg' className='bet'/>
+        <img src='sports-betting.jpeg' className='bet'/>
       </div>
       <div className="button-pos">
         <a href='#faq'>
           <button className="learn-button1">GO TO FAQS</button>
         </a>
-
-      
       </div>
       <div class="wrapper mt-5 pb-5">
         <marquee behavior="alternate">
@@ -41,14 +39,10 @@ const Home = () => {
           </span>
         </marquee>
       </div>
-      <h1 className="text-white mb-3 ml-5 howItWorks">How it works</h1>
+      <h1 className="mb-3 ml-5 howItWorks">How it works</h1>
       <div className="working pb-5">
         <p className="working-para mr-5">
-          Radio signals transmitted from a controller device control the actions
-          of a remote device. In radio communication, used in radio and
-          television.Radio signals transmitted from a controller device control
-          the actions of a remote device. In radio communication, used in radio
-          and television.
+          The most exciting and easy-to-use trading cum NFT marketplace built on Web3 is here. Just follow these simple steps and start earning! Put your cricketing knowledge to test and buy in form players and try to maximise your score. Also, you can trade player nfts and book short term profits.
         </p>
         <div className="text-center">
 
@@ -59,37 +53,29 @@ const Home = () => {
           <div className="demo-setter">
             <h1 className="demo-heading my-2">1. Choose your player</h1>
             <p className="demo-para my-2">
-              Radio signals transmitted from a controller device control the
-              actions
-              <br /> of a remote device. In radio communication, used in radio
-              and television.
+              Bid for a player whose capabilities you believe in the most.
+              As the tournament begins you can <br />choose to buy player NFTs directly.
             </p>
           </div>
           <div className="demo-setter">
-            <h1 className="demo-heading my-2">2. Bid on player NFT</h1>
+            <h1 className="demo-heading my-2">2. Claim NFTs</h1>
             <p className="demo-para my-2">
-              Radio signals transmitted from a controller device control the
-              actions
-              <br /> of a remote device. In radio communication, used in radio
-              and television.
+              You have the option to claim player NFTs if your bid is in the top 20%.
+              <br /> Otherwise, you have the option to withdraw your funds.
             </p>
           </div>
           <div className="demo-setter">
-            <h1 className="demo-heading my-2">3. Player wins a game</h1>
+            <h1 className="demo-heading my-2">3. Trade player NFTs</h1>
             <p className="demo-para my-2">
-              Radio signals transmitted from a controller device control the
-              actions <br />
-              of a remote device. In radio communication, used in radio and
-              television.
+              Put your cricketing expertise to test and buy players in excellent form. <br />
+              Trade nfts and try to book short-term profits.
             </p>
           </div>
           <div className="demo-setter">
-            <h1 className="demo-heading my-2">4. You get cash rewards</h1>
+            <h1 className="demo-heading my-2">4. Get cash rewards</h1>
             <p className="demo-para my-2">
-              Radio signals transmitted from a controller device control the
-              actions <br />
-              of a remote device. In radio communication, used in radio and
-              television.
+              At the end, you can avail exclusive cash rewards <br />based on your cummulative score
+              tallied throughout the league.
             </p>
           </div>
         </div>

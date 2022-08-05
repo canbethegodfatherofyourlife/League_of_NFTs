@@ -155,6 +155,8 @@ const Auction = () => {
   return (
     <div className="Nav">
       <Navbar />
+      <div className="selectTeamDiv mt-5">PLACE ( UPDATE ) YOUR BIDS!</div>
+      <h2 className="ht">Select a team and choose the player you want to bid on.</h2>
       <div className="Details">
         <div class="accordion" id="accordionExample">
           <div>
@@ -167,7 +169,7 @@ const Auction = () => {
                 aria-expanded="true"
                 aria-controls="collapseOne"
               >
-                <div className="selectTeamDiv">SELECT YOUR TEAM!</div>
+                <div className="selectTeamDiv1">SELECT YOUR TEAM!</div>
               </button>
             </h2>
           </div>
@@ -262,7 +264,7 @@ const Auction = () => {
           <div className="Bid">
             {/* <button className='tradingButton'>Base price</button> */ }
             {/* <button className='tradingButton'>Place your</button> */ }
-            { !placeBid && (
+            { (!placeBid && ((typeof addr === 'string') || addr.props.children !== 'Disconnected')) && (
               <div class="input-block">
                 <input
                   type="text"
@@ -277,7 +279,7 @@ const Auction = () => {
               </div>
             ) }
           </div>
-          { !placeBid && (
+          { (!placeBid && ((typeof addr === 'string') || addr.props.children !== 'Disconnected')) && (
             <button onClick={ () => placeBidHandler() } className="PlaceBid">
               Place Bid
             </button>
@@ -293,7 +295,7 @@ const Auction = () => {
               { playerid == playerId && (
                 <button
                   type="button"
-                  className="tradingButton"
+                  className="button-63"
                   data-toggle="modal"
                   data-target="#exampleModal"
                 >
