@@ -22,11 +22,13 @@ app.use(
     preflightContinue: true,
   })
 );
-app.use(express.json());
+
+app.use(bodyParser.json());
 
 app.use("/auction", require("./routes/auction"));
 app.use("/leaderboard", require("./routes/leaderboard"));
 app.use("/trading", require("./routes/trading"));
+app.use("/profile", require("./routes/profile"));
 
 const PORT = process.env.PORT || 3008;
 app.listen(PORT, console.log(`Server Started on PORT ${PORT}`));

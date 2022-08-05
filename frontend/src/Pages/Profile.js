@@ -7,19 +7,18 @@ import { MetaData } from "../metadata";
 import GetAccount from "../hooks/GetAccount"
 import abi from '../artifacts/auction.json'
 import GetContract from '../hooks/GetContract';
-import GetAuction from '../hooks/GetAuction';
 import { Connect } from '../components/ConnectButton';
 import {ethers} from 'ethers'
 
 const Profile = () => {
   const [ playerid, setplayerid ] = useState( 0 );
   const contract = GetContract();
-  const auction = GetAuction();
   const addr = GetAccount()
   const [data1, setData1] = useState([])
   let sendnftbut = useState(
     localStorage.getItem("getnft") ? localStorage.getItem("getnft") : false
   );
+  const [nftCount, setnftCount] = useState(0)
   const [editname, setname] = useState("");
   const [sellVal, setsellVal] = useState(0);
   const {ethereum}=window;
@@ -87,9 +86,23 @@ const Profile = () => {
     console.log(MetaData[playerid])
   }
 
-  const updateSellAmt=async()=>{
-    await auction.updatePrice(playerid+1,sellVal)
-  }
+  const updateSellAmt = async () => {
+    await fetch(`http://localhost:3008/profile/${addr}`, {
+      method: "PATCH",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        sell: true,
+        sellAmount: sellVal,
+      }),
+    }).then((res) => {
+      res.json().then((resp) => {
+        getData1();
+      });
+    });
+  };
 
   async function getData1(){
     await fetch(`http://localhost:3008/leaderboard/${addr}`)
@@ -104,10 +117,15 @@ const Profile = () => {
   useEffect( () => {
     getPlayer1()
     getData1()
+    getNftCount()
   },[])
 
-
-  console.log(addr)
+  const getNftCount = async () => {
+    const val  = await contract.balanceOf(addr)
+    setnftCount(val.toString())
+    console.log(val.toString())
+  }
+  
 
   if((typeof addr === 'string') || addr.props.children !== 'Disconnected'){
     return (
@@ -120,7 +138,7 @@ const Profile = () => {
               className="profile-img full-withradius border"
             />
           ) : (
-            <img src="./logo.PNG" className="profile-img" />
+            <img src="./sports-betting.jpeg" className="profile-img" />
           )}
           <div className="profile-content">
             <div className="profile-info">
@@ -225,18 +243,19 @@ const Profile = () => {
               <div className="icon1">
                 <div></div>
                 <p className="subtitle">
-                  {data1.length != 0 ? data1[0].score : " -- "}
+                  {Object.keys(data1).length != 0 ? data1[0].score : " - "}
                   Score
                 </p>
               </div>
               <div className="icon2">
+                {Object.keys(data1).length != 0}
                 <div>
                   <img src="./Coin.svg" />
                 </div>
                  <p className="subtitle mr-1">
-                  {data1.length != 0
+                  {Object.keys(data1).length != 0
                     ? data1[0].history.length
-                    : " -- "}
+                    : " - "}
                   Transactions
                 </p>  
               </div>
@@ -245,7 +264,7 @@ const Profile = () => {
                   <img src="./Stats.svg" />
                 </div>
                  <p className="subtitle">
-                  {data1.length != 0 ? data1.leaderboard : " -- "}
+                  {Object.keys(data1).length != 0 ? data1.leaderboard : " - "}
                   Rank
                 </p> 
               </div>
@@ -281,7 +300,7 @@ const Profile = () => {
                   Get address
                 </button>
   
-              {sendnftbut[0] === 'true' ? (
+              {Number(nftCount) < 1 ? (
                 <button class="sellbut" type="button" onClick={() => claimNft()}>
                   Claim NFT
                 </button>
@@ -346,7 +365,7 @@ const Profile = () => {
                 </div>
               </div>
             </div>
-            {data1.length != 0 ? (
+            {Object.keys(data1).length != 0 ? (
               <>
                 <h1 className="transaction">Previous Transactions</h1>
                 <table class="table table-borderless text-white mb-5">

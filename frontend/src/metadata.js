@@ -1,326 +1,41 @@
 export const MetaData = {
-    '1': 'QmbAoaAMiU53CMQM53eJ49Sgb3kFpBT1LMh9gmcaRjdkre',
+    '1': 'QmQkjvkEAZKfnPV2uKR2jgYw3WK7bGwmkxn7Y4sPfm9yCw',
 
-    '2': 'QmU2JpjZrPx9gwRVedHkrSEEPqhpLv9jFVCcRWHMf9D5UZ',
+    '2': 'Qme9tKDJKs5vGPoVZkyCxzN4UCj5YDegcnUGQvPibrW3or',
 
-    '3': 'QmSoy6aKi5mQYHAsePRER3Y1YrMWnJiv9tz53XBS3TTfv6',
+    '3': 'QmZuhVvLGyy1BDmFzUrnPFwDDNUGDW5kC8pnjeBJpr2CX4',
 
-    '4': 'QmWj9MwNVhWCvJXEEwkD8T5J6aWZ7v1tk6vN73eT3ithh7',
+    '4': 'QmfDi6tdX93BrKMWq1nnH5siFyCPGE4Vs9MAr1L7wd3ojd',
 
-    '5': 'QmajXSTj7NPdiGJ2FggJaLSyWcNFUeTLByAMR5pB9bwL93',
+    '5': 'Qmbi26z8gi2nXBJcvDmR88zsb4s7oZkut6CZqGoqFudFMk',
 
-    '6': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Rohit Sharma",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "MI"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Batter"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "4 times winning captain"
-            },
-        ]
-    },
+    '6': 'QmarRW8M4Ynx3yCSzgBaUnY24bv3MEVTjJ9F2Mhk9QKT5q',
 
-    '7': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Suryakumar Yadav",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "MI"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Batter"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "424 runs to be MI second-highest run-getter"
-            },
-        ]
-    },
+    '7': 'QmQ13uhtEVq4WRcYma23BmjTiJjr392ERxnhFvUeRhWsSA',
 
-    '8': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Ishan Kishan",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "MI"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Batter"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "Sold to MI for 15.25 cr"
-            },
-        ]
-    },
+    '8': 'QmXbJVvCN1YcE4b62b1vyimy1stn2qYZy6RYfjJEFSvxbj',
 
-    '9': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Jaspreet Bumrah",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "MI"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Fast Bowler"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "Jasprit Bumrah has emerged as India No. 1 bowler across all formats."
-            },
-        ]
-    },
+    '9': 'QmX26KeAQXhcejFburvdMstZXraxdfprBnj8749q89Tk9F',
 
-    '10': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Kieron Pollard",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "MI"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "All rounder"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "Power Hitter"
-            },
-        ]
-    },
+    '10': 'QmcLYiwei9WRQ8iwL87yrCjbfXNQndt5XLhv4nhwscH3y2',
 
-    '11': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Hardik Pandya",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "MI"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "All rounder"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "Gujrat Titans captain"
-            },
-        ]
-    },
+    '11': 'QmXHbyk8MBtNxTzzbk2D33X117fLV1ApPnJkCvTQ1ZQWqV',
 
-    '12': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "David Miller",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "GJ"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Batter"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "Known for his Huge Sixes"
-            },
-        ]
-    },
+    '12': 'QmYcjdkHPGPXVWZQ21mC5Y6WmrQEqw4UnzxpUdp4L1PhnU',
 
-    '13': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Shubman Gill",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "GJ"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Batter"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "has the flair and abilities of a top-class batter"
-            },
-        ]
-    },
+    '13': 'QmNLxZTUS71sKiVT3G6ZE4rnnuHjoC1yVsnWALwRxQLZof',
 
-    '14': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Rashid Khan",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "GJ"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Spinner"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "Arguably the best leg-spinner in white ball cricket"
-            },
-        ]
-    },
+    '14': 'QmXLhAqkxSjLpFLbrCkSCxtbNw73Jqh9CPoG24NwBjLwj7',
 
-    '15': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Mohammed Shami",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "GJ"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Fast Bolwer"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "hefty price tag of INR 4.8 crore"
-            },
-        ]
-    },
+    '15': 'QmZLm3ACXEzpiHafhVvqwjnjBWPQKApgUJR1hLqvLE4N1M',
 
-    '16': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Sanju Samson",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "RR"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Batter and wk"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "moved into senior position when named captain for the 2021 season"
-            },
-        ]
-    },
+    '16': 'QmY17zEoqp8ALRg3EoMcuNTeFEAwk3BhpobPrSti3ahGDt',
 
-    '17': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Jos Buttler",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "RR"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Batter and wk"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "sets the stage on fire with his attractive stroke play"
-            },
-        ]
-    },
+    '17': 'QmUminU5GrRUyBWXHCEx5TMLiqNaMd6Lcs4rUzPsSRF5ui',
 
-    '18': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Devdutt Padikkal",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "RR"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Batter"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "In his debut season in 2020, he amassed 473 runs"
-            },
-        ]
-    },
+    '18': 'QmRSXn6jry9Nrv9ARGuGW8oR68Si3RdBWET14CpzbgMdBR',
 
-    '19': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Trent Boult",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "RR"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Fast Bowler"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "Leads the pace battery of RR & great fielder"
-            },
-        ]
-    },
+    '19': 'Qmc71SZ6BQE857f8BQ4vcS7EQELfXVViMwtgMhsgd3HvkK',
 
-    '20': {
-        "description": "These are awesome NFTs created by PNL",
-        "external_url": "",
-        "image": "",
-        "name": "Yuzi Chahal",
-        "attributes": [
-            {
-                "trait_type": "Team",
-                "value": "RR"
-            },
-            {
-                "trait_type": "Domain",
-                "value": "Batter and wk"
-            },
-            {
-                "trait_type": "Achievements",
-                "value": "match- winner on his day, sold for INR 6.50 Crs"
-            },
-        ]
-    },
+    '20': 'QmNNiBCsiCCAbY82Q6Uu1K9Hgog5FDvSa4FZgkU392Ho1L',
 }

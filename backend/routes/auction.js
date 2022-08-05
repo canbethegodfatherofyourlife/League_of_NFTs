@@ -78,7 +78,7 @@ router.get("/:id/", async function (req, res) {
       const bidData = await Auction.find({ address: address})
       let bidPlaced = true;
       let bidAmt = 0;
-      let playerid=null;
+      let playerid=0;
       if (bidData.length != 0){
         bidAmt = bidData[0].bid
         playerid = bidData[0].playerId;

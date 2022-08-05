@@ -8,7 +8,6 @@ import { PlayerIdData } from "../playerToid";
 import { iplData } from "../iplData";
 import { CategoryData } from "../data";
 import GetAccount from "../hooks/GetAccount"
-import GetAuction from "../hooks/GetAuction"
 import GetContract from '../hooks/GetContract'
 import GetSigner from '../hooks/GetSigner'
 
@@ -20,6 +19,7 @@ const Trading = () => {
   const addr = GetAccount();
   const [data, setData] = useState([]);
   const [team, setTeam] = useState([]);
+  const [nftCount, setnftCount] = useState(0)
   const [playerId, setPlayerId] = useState(0);
   const [sellamt, setsellamt] = useState(0);
   const[TokenID,setTokenID]=useState('');
@@ -32,7 +32,6 @@ const Trading = () => {
   };
 
   const contract = GetContract();
-  const auction = GetAuction();
   const account = GetAccount();
 
 const showToken=async(sellerAddres)=>{
@@ -42,7 +41,9 @@ const showToken=async(sellerAddres)=>{
   console.log('Token',id.toString());
 }
 
-
+useEffect( () => {
+  getNftCount()
+})
 
 const approveNft = async() => {
     await contract.approve(account,TokenID);
@@ -115,7 +116,11 @@ const transferNft = async() => {
       .catch( ( e ) => console.log( e.message ) );
   }
 
-  console.log(sellerAddress,sellamt);
+  const getNftCount = async () => {
+    const val  = await contract.balanceOf(addr)
+    setnftCount(val.toString())
+    console.log(val.toString())
+  }
   
 
 
@@ -197,8 +202,7 @@ const transferNft = async() => {
                   className="teamName"
                   onClick={() => playerNameHandler(item)}
                 >
-                  {" "}
-                  {item}{" "}
+                  {item}
                 </button>
               ))}
             </div>
@@ -222,7 +226,7 @@ const transferNft = async() => {
               <button className="priceButton">{item[1]}</button>
             ))}
           </div>
-          {showBut && (
+          {(showBut && nftCount == 0 ) && (
             <>
             <button class="button-75" role="button" onClick={()=>approveNft()} >
               <span class="text" >
