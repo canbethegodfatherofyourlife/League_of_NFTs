@@ -20,10 +20,20 @@ Play & Earn Game where users leverage their cricketing knowledge to earn money
 
 
 ## Home Page
+![po1](https://user-images.githubusercontent.com/77283508/183215716-bf4dbedc-53c6-40d0-8bb0-5749d16a130b.PNG)
+
 ## Profile Page
+![po2](https://user-images.githubusercontent.com/77283508/183215742-bb031105-a703-408f-b958-a374b201ea57.PNG)
+
 ## Auction Page
+![po4](https://user-images.githubusercontent.com/77283508/183215822-446406b0-8738-4e16-aed3-60acdd9f740d.PNG)
+
 ## Leaderboard Page
+![po3](https://user-images.githubusercontent.com/77283508/183215799-65649fdb-a157-4275-951b-bc8e4631ff13.PNG)
+
 ## Trading Page
+![po5](https://user-images.githubusercontent.com/77283508/183215842-754c61fe-d24f-4370-bc86-137c78dffe5d.PNG)
+
 ## Tech Stack
 
 * ReactJs
