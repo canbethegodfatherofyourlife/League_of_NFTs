@@ -49,7 +49,6 @@ const Profile = () => {
         );
         const transaction = await contract.return_money(addr);
         await transaction.wait();
-        showbutton = localStorage.setItem("withdraw", false);
         localStorage.setItem("withdraw", false);
       } else {
         console.log("Metamask not found!");
@@ -85,6 +84,8 @@ const Profile = () => {
     await contract.awardItem(addr,MetaData[playerid])
     console.log(MetaData[playerid])
   }
+
+ console.log(playerid)
 
   const updateSellAmt = async () => {
     await fetch(`http://localhost:3008/profile/${addr}`, {
@@ -126,13 +127,14 @@ const Profile = () => {
     console.log(val.toString())
   }
   
+  console.log(MetaData[Number(playerid)])
 
   if((typeof addr === 'string') || addr.props.children !== 'Disconnected'){
     return (
       <div className="Nav">
         <Navbar />
         <div className="profile">
-          {playerid != 0 ? (
+          {Object.keys(data1).length != 0 && playerid != 0 ? (
             <img
               src={CategoryData[playerid][1]}
               className="profile-img full-withradius border"
@@ -222,13 +224,13 @@ const Profile = () => {
               </div>
             </div>
   
-            {playerid != 0 ? (
+            {Object.keys(data1).length != 0 ? (
               <h1 className="title1">You currently own</h1>
             ) : (
               <h1 className="title1">Invest in cool player NFTs</h1>
             )}
             <h1 className="title2">
-              {playerid != 0 ? (
+              {Object.keys(data1).length  != 0 && playerid != 0 ? (
                 CategoryData[playerid][0]
               ) : (
                 <h1 className="title3">
@@ -275,7 +277,7 @@ const Profile = () => {
             </p>
   
             <div className="d-flex mt-2">
-               {playerid != 0 ? (
+               {showbutton[0] == "false" ? (
               <button
                 type="button"
                 class="sellbut"
@@ -286,7 +288,7 @@ const Profile = () => {
               </button>
                 ) : null}
 
-              {playerid == 0 && showbutton[0] == "true" ? (
+              {showbutton[0] == "true" ? (
                 <button class="sellbut" type="button" onClick={() => withdraw()}>
                   Withdraw Funds!
                 </button>
@@ -300,7 +302,7 @@ const Profile = () => {
                   Get address
                 </button>
   
-              {Number(nftCount) < 1 ? (
+              {(Number(nftCount) < 1 && showbutton[0] == "false") ? (
                 <button class="sellbut" type="button" onClick={() => claimNft()}>
                   Claim NFT
                 </button>

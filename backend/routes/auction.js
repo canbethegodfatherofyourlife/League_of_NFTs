@@ -75,7 +75,7 @@ router.patch("/:id/:id1", async function (req, res) {
 router.get("/:id/", async function (req, res) {
     try {
       const address = req.params.id;
-      const bidData = await Auction.find({ address: address})
+      const bidData = await User.find({ address: address})
       let bidPlaced = true;
       let bidAmt = 0;
       let playerid=0;
