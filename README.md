@@ -49,7 +49,7 @@ Play & Earn Game where users leverage their cricketing knowledge to earn money
 * MongoDB
 * NodeJs
 * Bootstrap
-* Remix IDE
+
 ## Authors
 
 - [@arka](https://github.com/canbethegodfatherofyourlife)
