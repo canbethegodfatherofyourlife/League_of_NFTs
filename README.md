@@ -66,7 +66,7 @@ Student at Indian Institute of Technology, Guwahati | Blockchain Developer | Ful
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/ArkaDatta02)
 
 
-# Hi, I'm Arka! 👋
+# Hi, I'm Arka and I am Anushka! 👋
 
 
 ## 🛠 Skills
