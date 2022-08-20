@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon backend/server.js"
+        "start": "node backend/server.js"
     },
     "author": "arka",
     "license": "ISC",
