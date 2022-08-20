@@ -46,5 +46,5 @@ if(process.env.NODE_ENV === 'production'){
 
 // ------------------------------------Deployment --------------------------------
 
-const PORT = process.env.PORT || 3008;
+const PORT = Number(process.env["PORT"]) || 3008
 app.listen(PORT, console.log(`Server Started on PORT ${PORT}`));
